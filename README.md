@@ -176,7 +176,12 @@ recall: {tp/(tp+fn)}
 ```python
 
 '''
-Underfitting, because the train and test error are fairly close, but they're both low and can be improved
+Underfitting, because the train and test error are fairly close, 
+but they're both low and can be improved
+
+Bias, because the model's performance doesn't change much when 
+we're predicting on new data vs the data the model was trained on,
+but the overall performance of the model is relatively poor
 
 '''
 ```
