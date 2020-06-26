@@ -186,7 +186,7 @@ but the overall performance of the model is relatively poor
 '''
 ```
 
-#### Run models with the first 10 variables, then another model with all the varibles
+#### Run models with the first 10 variables, then another model with all the variables
   - Generate confusion matrices and calculate accuracy, precision and recall as you did above
   - **BONUS**: use functions to do so!
   
