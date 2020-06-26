@@ -166,7 +166,7 @@ X_test_3 = (
 test_preds_3 = log_reg.predict(X_test_3)
 ```
 
-#### Generate two confusion matrices for the training predictions and testing predictions
+#### Generate two confusion matrices, one each for the training predictions and testing predictions
 
 
 ```python
