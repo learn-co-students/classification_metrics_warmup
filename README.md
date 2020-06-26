@@ -24,7 +24,7 @@ data = X.copy()
 data['target'] = y
 ```
 
-#### How many features in this dataset?  How many classes?  Is there a class imbalance?
+#### How many features in `data`?  How many classes?  Is there a class imbalance?
 
 
 ```python
