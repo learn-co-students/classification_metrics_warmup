@@ -1,4 +1,5 @@
-# Do you even compare the metrics of your models bro
+
+# Classification Metrics
 
 
 ```python
@@ -30,7 +31,7 @@ data['target'] = y
 #your work here
 ```
 
-#### Train-test split (`random_state` = 666) and standard scale all features
+#### Train-test split (`random_state` = 42) and standard scale all features
 
   - Why do we standardize *after* the train test split, and not before?
 
@@ -102,9 +103,4 @@ data['target'] = y
 
 ```python
 #your work here
-```
-
-
-```python
-
 ```
