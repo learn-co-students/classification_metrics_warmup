@@ -1,4 +1,5 @@
-# Do you even compare the metrics of your models bro
+
+# Classification Metrics
 
 
 ```python
@@ -40,7 +41,14 @@ nope!
 '''
 ```
 
-#### Train-test split (`random_state` = 666) and standard scale all features
+
+
+
+    '\n20\n\n2\n\nnope!\n'
+
+
+
+#### Train-test split (`random_state` = 42) and standard scale all features
 
   - Why do we standardize *after* the train test split, and not before?
 
@@ -52,7 +60,7 @@ nope!
 X = data.iloc[:, :20]
 y = data['target']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.2, random_state=666)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.2, random_state=42)
 
 scaler = StandardScaler()
 
@@ -78,11 +86,7 @@ log_reg.fit(X_train_3, y_train)
 
 
 
-    LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
-                       intercept_scaling=1, l1_ratio=None, max_iter=100,
-                       multi_class='auto', n_jobs=None, penalty='none',
-                       random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
-                       warm_start=False)
+    LogisticRegression(penalty='none')
 
 
 
@@ -124,6 +128,12 @@ print(train_cm)
 print(test_cm)
 ```
 
+    [[3016  979]
+     [ 785 3220]]
+    [[739 270]
+     [186 805]]
+
+
 #### Calculate the accuracy, recall, and precision for the training predictions
 
 #### Calculate the accuracy, recall, and precision for the testing predictions
@@ -155,16 +165,16 @@ recall: {tp/(tp+fn)}
 
     
     training 
-    accuracy: 0.734875
-    precision: 0.7315502724120851 
-    recall: 0.7401653720871962
+    accuracy: 0.7795
+    precision: 0.766849249821386 
+    recall: 0.8039950062421972
     
     
     
     test 
-    accuracy: 0.7305
-    precision: 0.7272727272727273 
-    recall: 0.7410358565737052
+    accuracy: 0.772
+    precision: 0.7488372093023256 
+    recall: 0.8123107971745711
     
 
 
@@ -185,6 +195,13 @@ but the overall performance of the model is relatively poor
 
 '''
 ```
+
+
+
+
+    "\nUnderfitting, because the train and test error are fairly close, \nbut they're both low and can be improved\n\nBias, because the model's performance doesn't change much when \nwe're predicting on new data vs the data the model was trained on,\nbut the overall performance of the model is relatively poor\n\n"
+
+
 
 #### Run models with the first 10 variables, then another model with all the variables
   - Generate confusion matrices and calculate accuracy, precision and recall as you did above
@@ -273,30 +290,30 @@ in slightly.
 
     
         training metrics for 10-variable model 
-        accuracy: 0.934375
-        precision: 0.9257985257985258 
-        recall: 0.9441242796291657
+        accuracy: 0.870125
+        precision: 0.8544455066921606 
+        recall: 0.8926342072409488
         
     
     
         testing metrics for 10-variable model 
-        accuracy: 0.9265
-        precision: 0.9213372664700098 
-        recall: 0.9332669322709163
+        accuracy: 0.8585
+        precision: 0.845703125 
+        recall: 0.8738647830474269
         
     
     
         training metrics for 20-variable model 
-        accuracy: 0.934125
-        precision: 0.925343811394892 
-        recall: 0.9441242796291657
+        accuracy: 0.872125
+        precision: 0.8556774809160306 
+        recall: 0.8956304619225968
         
     
     
         testing metrics for 20-variable model 
-        accuracy: 0.9255
-        precision: 0.9195289499509323 
-        recall: 0.9332669322709163
+        accuracy: 0.857
+        precision: 0.8412391093901258 
+        recall: 0.8768920282542886
         
     
     
